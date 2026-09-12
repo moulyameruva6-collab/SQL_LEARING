@@ -40,3 +40,10 @@ INTERSECT
 
 SELECT employeeNumber
 FROM employees;
+
+SELECT e.employeeNumber,
+       e.firstName AS employee_name,
+       m.firstName AS manager_name
+FROM employees e
+LEFT JOIN employees m
+ON e.reportsTo = m.employeeNumber;
